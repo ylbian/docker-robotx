@@ -43,6 +43,6 @@ else
 fi
 
 # install robotx
-pip install robotx -y
+pip install robotx
 
 echo "Done"
