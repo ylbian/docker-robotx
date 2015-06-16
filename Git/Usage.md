@@ -3,7 +3,7 @@
 - This Dockerfile can build a Docker Image which used for storing our automation codes.
 
 ```
-$ docker build git .
+$ docker build -t git .
 ```
 
 - Build the docker container as a deamon and share storage to other docker containers who really run automaion

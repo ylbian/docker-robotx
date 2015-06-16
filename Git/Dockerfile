@@ -10,6 +10,5 @@ RUN yum install git vim -y
 RUN git config --global user.email 'ybian@redhat.com'
 RUN git config --global user.name 'ybian'
 
-# set user and dir
-USER git
+# set dir
 WORKDIR /data/
