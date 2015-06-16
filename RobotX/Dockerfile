@@ -1,4 +1,4 @@
-FROM fedora:22
+FROM fedora:21
 
 MAINTAINER ybian <ybian@redhat.com>
 
