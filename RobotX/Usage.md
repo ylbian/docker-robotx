@@ -9,7 +9,7 @@ $ docker build -t robotx .
 - Build the docker container which mount a Git container contains automation codes, and use those code to run automation.
 
 ```
-$ docker run -it --name test_robotx robotx /bin/bash
+$ docker run -it --volumes-from git-branch_name --name test_robotx robotx /bin/bash
 ```
 
 - Run automation test scripts just like normal
