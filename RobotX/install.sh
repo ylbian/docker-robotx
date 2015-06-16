@@ -12,7 +12,7 @@ do
     if  test -z `rpm -qa $i`
     then
         echo "install $i ..."
-        dnf -y install $i
+        yum -y install $i
     else
         echo "$i exist"
     fi
@@ -43,6 +43,6 @@ else
 fi
 
 # install robotx
-pip install robotx
+pip install robotx -y
 
 echo "Done"

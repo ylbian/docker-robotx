@@ -18,7 +18,10 @@ RUN sh /robotx/install.sh
 RUN export DISPLAY=:99
 
 # Start Xvfb as deamon to run a virtual window
-#CMD Xvfb :99
+RUN Xvfb :99 &
+
+# set workdir
+WORKDIR /data/
 
 # Run automation test script
 #CMD Xvfb pybot test.txt
