@@ -3,16 +3,21 @@
 - This Dockerfile can build a Docker Image which is used for storing our automation codes.
 
 ```
-$ docker build -t git .
+$ docker build -t storage:0.1.0 .
 ```
 
 - Build the docker container as a deamon and share storage to other docker containers who really run automaion
 
-- Collect automation run results if needed.(TODO)
 
 ```
 $ docker run --itd -v /data/ --name git-branch_name git /bin/bash
 ```
+
+
+- Collect automation run results if needed.(TODO)
+
+- Or we need build another Docker image for collecting automation reports and write the results to TCMS.
+
 
 ### Usage of git
 
