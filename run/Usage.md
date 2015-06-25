@@ -24,6 +24,13 @@ $ docker run -it --volumes-from storage_container_name --name run_container_name
 ```
 
 
+- Build a fake display by using Xvfb
+
+```
+$ Xfvb :99 &
+```
+
+
 - Run automation just like in our local PC
 
 ```
