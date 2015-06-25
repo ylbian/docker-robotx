@@ -10,7 +10,7 @@ $ docker build -t storage:0.1.0 .
 
 
 ```
-$ docker run --itd -v /data/ --name git-branch_name git /bin/bash
+$ docker run --itd -v /source/:/destination/ --name git-branch_name git /bin/bash
 ```
 
 
