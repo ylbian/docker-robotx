@@ -6,7 +6,7 @@ MAINTAINER ybian <chuijiaolianying@gmail.com>
 COPY *.rpm /tmp/
 
 # Install python-pip, postgresql-devel
-RUN yum -y install python-pip python-requests-kerberos python-requests python-devel postgresql postgresql-devel openssl gcc
+RUN yum -y install python-pip python-requests-kerberos python-requests python-devel postgresql postgresql-devel openssl gcc krb5-workstation
 
 # Install robotframework
 RUN pip install robotframework robotframework-selenium2library psycopg2
@@ -25,7 +25,7 @@ RUN ln -s /etc/pki/tls/certs/redhat-cacert.crt `openssl x509 -hash -noout -in /e
 RUN cat /etc/pki/tls/certs/redhat-cacert.crt >> /etc/pki/tls/certs/ca-bundle.crt
 
 # clear /tmp/
-RUN rm -rf /tmp/
+RUN rm -rf /tmp/*
 
 # Set workdir
 WORKDIR /data/
