@@ -12,19 +12,17 @@ RUN yum -y install python-pip python-requests-kerberos python-requests python-de
 RUN pip install robotframework robotframework-selenium2library psycopg2
 
 # Rpm install python-pdc
-RUN cd /tmp/
-RUN rpm -i python-pdc-0.5.0-0.1.beta.noarch.rpm
-RUN rpm -i beanbag-1.9.2-3.el7eng.noarch.rpm
-RUN rpm -i pdc-client-0.5.0-0.1.beta.noarch.rpm
+RUN rpm -i /tmp/python-pdc-0.5.0-0.1.beta.noarch.rpm
+RUN rpm -i /tmp/beanbag-1.9.2-3.el7eng.noarch.rpm
+RUN rpm -i /tmp/pdc-client-0.5.0-0.1.beta.noarch.rpm
 
 # Config kerberos
 COPY krb5.conf /etc/
 
 # Set CA config
-RUN cd /etc/pki/tls/certs/
-RUN curl --insecure -o redhat-cacert.crt https://engineering.redhat.com/Eng-CA.crt
-RUN ln -s redhat-cacert.crt `openssl x509 -hash -noout -in redhat-cacert.crt`.0
-RUN cat redhat-cacert.crt >> ca-bundle.crt
+RUN curl --insecure -o /etc/pki/tls/certs/redhat-cacert.crt https://engineering.redhat.com/Eng-CA.crt
+RUN ln -s /etc/pki/tls/certs/redhat-cacert.crt `openssl x509 -hash -noout -in redhat-cacert.crt`.0
+RUN cat /etc/pki/tls/certs/redhat-cacert.crt >> /etc/pki/tls/certs/ca-bundle.crt
 
 # clear /tmp/
 RUN rm -rf /tmp/
