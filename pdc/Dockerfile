@@ -21,7 +21,7 @@ COPY krb5.conf /etc/
 
 # Set CA config
 RUN curl --insecure -o /etc/pki/tls/certs/redhat-cacert.crt https://engineering.redhat.com/Eng-CA.crt
-RUN ln -s /etc/pki/tls/certs/redhat-cacert.crt `openssl x509 -hash -noout -in redhat-cacert.crt`.0
+RUN ln -s /etc/pki/tls/certs/redhat-cacert.crt `openssl x509 -hash -noout -in /etc/pki/tls/certs/redhat-cacert.crt`.0
 RUN cat /etc/pki/tls/certs/redhat-cacert.crt >> /etc/pki/tls/certs/ca-bundle.crt
 
 # clear /tmp/
