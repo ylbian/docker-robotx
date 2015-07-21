@@ -27,4 +27,7 @@ RUN ln -s redhat-cacert.crt `openssl x509 -hash -noout -in redhat-cacert.crt`.0
 RUN cat redhat-cacert.crt >> ca-bundle.crt
 
 # clear /tmp/
-RUN rm -rf *
+RUN rm -rf /tmp/
+
+# Set workdir
+WORKDIR /data/
