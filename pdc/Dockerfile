@@ -4,4 +4,4 @@ MAINTAINER ybian <chuijiaolianying@gmail.com>
 
 # Copy rpm file to container for install
 RUN mkdir /robotx
-COPY *.rpm /robotx
+COPY *.rpm /robotx/
